@@ -1,0 +1,33 @@
+// Criando um repositório com o nome workspace//
+
+:~$ mkdir workspace
+
+// Criando arquivos para colocar no diretório//
+
+:~/workspace$ echo "Bem vindo ao nosso primeiro arquivo txt" > arquivo1.txt
+:~/workspace$ echo "Bem vindo ao nosso segundo arquivo txt" > arquivo2.txt
+
+// Criando um Subdiretório//
+
+:~/workspace$ mkdir subdiretorio
+:~/workspace$ mkdir subdiretorio2
+
+// iniciando o gedit em background para criar o Script de backup //
+
+:~/workspace$ gedit realizabackup &
+
+// com o editor aberto vamos digitar o script que irá realizar o backup dentro do nosso diretório workspace//
+
+zip backup.zip -qr ~/workspace/
+echo "Backup realizado com sucesso"
+
+// Após salvar, vamos voltar para o terminal para executar nosso script//
+
+:~/workspace$ sh realizabackup
+
+// Agora vamos verificar se o arquivo de backup foi realizado corretamente//
+
+:~/workspace$ unzip -l backup.zip
+
+
+
